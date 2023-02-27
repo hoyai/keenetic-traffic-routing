@@ -1,0 +1,12 @@
+{
+  "name": "keenetic-traffic-routing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hoyai/keenetic-traffic-routing.git",
+  "author": "hoyai",
+  "license": "MIT",
+  "dependencies": {
+    "node-ssh": "^13.0.1",
+    "signale": "^1.4.0"
+  }
+}
