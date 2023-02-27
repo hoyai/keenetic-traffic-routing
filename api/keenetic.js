@@ -52,7 +52,7 @@ module.exports = class KeeneticApi {
       `ip route ${ip} ${network} auto !${comment}`
     );
 
-    this.log.success("add rule", network, comment, ip, stdout);
+    this.log.debug("add rule", network, comment, ip, stdout);
     return stdout;
   }
 };
