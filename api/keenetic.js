@@ -1,7 +1,7 @@
 const { NodeSSH } = require("node-ssh");
 const { Signale } = require("signale");
 
-export class KeeneticApi {
+module.exports = class KeeneticApi {
   constructor() {
     this.ssh = new NodeSSH();
     this.log = new Signale({ scope: "KeeneticApi" });
@@ -17,6 +17,14 @@ export class KeeneticApi {
   connect(host = "127.0.0.1", username = "admin", password = "admin") {
     this.log.debug(host, username, "Connecting to the router via SSH");
     return this.ssh.connect({ host, username, password });
+  }
+
+  /**
+   * Disconnect
+   * @returns void
+   */
+  disconnect() {
+    return this.ssh.dispose();
   }
 
   /**
@@ -47,4 +55,4 @@ export class KeeneticApi {
     this.log.success("add rule", network, comment, ip, stdout);
     return stdout;
   }
-}
+};
